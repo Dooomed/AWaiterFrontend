@@ -1,0 +1,11 @@
+<div class="container" style="padding-top: 10px">
+  <div class="row row-cols-3 row-cols-md-4 g-3">
+    <div *ngFor="let order of orders">
+      <div class="col">
+        <div class="card" (click)="goToOrderDetails(order.id)">
+          <span>Table Number: <a class="card-title" routerLink="{{order.id}}">{{order?.tableNumber}}</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

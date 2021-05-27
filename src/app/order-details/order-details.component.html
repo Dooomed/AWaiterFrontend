@@ -1,0 +1,13 @@
+<div class="container" style="padding-top: 10px">
+  <h2>Order Details: </h2>
+  <h4><span>Table number: </span>{{this.order?.tableNumber}}</h4>
+  <h4><span>Status: </span>{{this.order?.status}}</h4>
+  <div *ngFor="let meal of order?.mealList" class="form-control">
+    <img [src]="meal?.meal?.imageUrl" class="img-thumbnail" width="600" height="400" alt="image">
+    <p>{{meal?.meal?.name}}-{{meal?.quantity}}</p>
+  </div>
+  <button (click)="deleteOrder()" class="btn btn-danger">Delete</button>
+  <div *ngIf="order?.mealList?.length === 0" class="alert-danger">
+    <h5>Meal list is empty</h5>
+  </div>
+</div>

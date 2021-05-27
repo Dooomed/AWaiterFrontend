@@ -1,0 +1,34 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #mealForm="ngForm">
+      <div class="form-floating">
+        <input type="text" [(ngModel)]="meal.name" class="form-control" id="name" name="name" placeholder="Name" required #name="ngModel">
+        <label>Name</label>
+      </div>
+      <div [hidden]="!name.pristine" class="alert alert-info">Name is required!</div>
+      <br>
+      <div class="form-floating">
+        <textarea [(ngModel)]="meal.description" class="form-control" id="description" name="description" style="height: 100px" placeholder="Description" required #description="ngModel"></textarea>
+        <label>Description</label>
+      </div>
+      <div [hidden]="!description.pristine" class="alert alert-info">Description is required!</div>
+      <br>
+      <div class="form-floating">
+        <input type="number" [(ngModel)]="meal.price" aria-label="Dollar amount (with dot and two decimal places)" class="form-control" id="price" name="price" required #price="ngModel" placeholder="0">
+        <label>Price</label>
+      </div>
+      <div [hidden]="!price.pristine" class="alert alert-info">Price is required!</div>
+      <br>
+      <div class="form-floating">
+        <input type="url" [(ngModel)]="meal.imageUrl" class="form-control" id="image" name="image" required #imageUrl="ngModel" placeholder="_">
+        <label>Image url</label>
+        <br>
+        <img [src]="meal.imageUrl" [hidden]="!meal.imageUrl" class="img-thumbnail" height="300" width="300">
+      </div>
+    <br>
+      <div class="justify-content-center">
+        <button type="submit" [disabled]="!mealForm.form.valid" class="btn btn-info ">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

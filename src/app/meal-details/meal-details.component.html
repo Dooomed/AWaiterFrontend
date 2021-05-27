@@ -1,0 +1,9 @@
+<div class="container" style="padding-top: 10px">
+  <div class="form-control">
+    <img [src]="meal?.imageUrl" class="img-thumbnail" alt="Image" width="600" height="400">
+    <p><strong>Name: </strong>{{meal?.name}}</p>
+    <p><strong>Description: </strong>{{meal?.description}}</p>
+    <p><strong>Price: </strong>{{meal?.price}}<span>$</span></p>
+    <button class="btn btn-danger" (click)="deleteMeal()">Delete</button>
+  </div>
+</div>

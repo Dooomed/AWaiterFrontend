@@ -1,0 +1,22 @@
+<div class="container" style="padding-top: 10px">
+
+  <div class="row row-cols-3 row-cols-md-4 g-3">
+    <div *ngFor="let meal of meals">
+      <div class="col">
+      <div class="card h-auto" (click)="goToDetails(meal?.id)">
+        <img [src]="meal.imageUrl" class="card-img-top" alt="">
+        <div class="card-body">
+          <h4 class="card-title">{{meal.name}}</h4>
+
+          <p class="card-text">{{meal.description}}</p>
+          <p class="card-text"><span >Price: </span>{{meal.price}}$</p>
+
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+  <hr>
+
+  </div>
+
